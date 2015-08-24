@@ -8,7 +8,7 @@ before_install:
   - sudo apt-get install opencl-headers
 
 script:
-  - g++ -std=c++11 -lOpenCL detectCPUs.cpp -o detectCPUs && ./detectCPUs
+  - g++ -lOpenCL detectCPUs.cpp -o detectCPUs && ./detectCPUs
 
 notifications:
   email:
