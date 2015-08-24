@@ -1,4 +1,17 @@
-language: cpp
+language: objective-c
+
+sudo: required
+
 compiler: clang
+
+before_install:
+  - wget https://www.khronos.org/registry/cl/api/1.2/cl.hpp
+  - sudo mv cl.hpp /System/Library/Frameworks/OpenCL.framework/Headers/cl.hpp
+
 script:
-  - clang++ -std=c++11 detectCPUs.cpp -o detectCPUs && ./detectCPUs
+  - clang++ -std=c++11 -framework OpenCL detectCPUs.cpp -o detectCPUs && ./detectCPUs
+
+notifications:
+  email:
+    on_success: change
+    on_failure: change
