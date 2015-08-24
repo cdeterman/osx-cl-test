@@ -2,13 +2,13 @@ language: cpp
 
 sudo: required
 
-compiler: clang
+compiler: gcc
 
 before_install:
   - sudo apt-get install opencl-headers
 
 script:
-  - clang++ -std=c++11 -lOpenCL detectCPUs.cpp -o detectCPUs && ./detectCPUs
+  - g++ -std=c++11 -lOpenCL detectCPUs.cpp -o detectCPUs && ./detectCPUs
 
 notifications:
   email:
