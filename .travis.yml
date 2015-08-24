@@ -1,0 +1,4 @@
+language: cpp
+compiler: clang
+script:
+  - clang++ -std=c++11 detectCPUs.cpp -o detectCPUs && ./detectCPUs
