@@ -8,11 +8,6 @@
 #include <CL/cl.h>
 #endif
 
-#ifdef CL_VERSION_1_3
-#undef CL_VERSION_1_3
-#endif
-
-
 #if defined(__APPLE__) || defined(__MACOSX)
 #include <OpenCL/cl.hpp>
 #else
