@@ -4,6 +4,9 @@ sudo: required
 
 compiler: clang
 
+before_install:
+  - sudo apt-get install opencl-headers
+
 script:
   - clang++ -std=c++11 -lOpenCL detectCPUs.cpp -o detectCPUs && ./detectCPUs
 
